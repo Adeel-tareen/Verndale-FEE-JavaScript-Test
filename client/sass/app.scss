@@ -1,0 +1,90 @@
+@import "reset";
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/solid.scss";
+@import "../fontawesome/scss/brands.scss";
+
+body,
+html {
+	font-weight: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wrapper {
+	max-width: 450px;
+	margin: 150px auto;
+}
+.hide {
+	display: none;
+}
+.search-input {
+	margin-top: 20px;
+	background: #fff;
+	width: 100%;
+	border-radius: 5px;
+	position: relative;
+	box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+
+	input{
+		height: 55px;
+		width: 100%;
+		outline: none;
+		border: none;
+		border-radius: 5px;
+		padding: 0 60px 0 20px;
+		font-size: 18px;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+	}
+	.active input {
+		border-radius: 5px 5px 0 0;
+	}
+
+	.search-box {
+		//padding: 10px 8px;
+		//opacity: 1;
+		//pointer-events: auto;
+		&.overflowed {
+			height: 160px;
+			overflow: scroll;
+		}
+		li {
+			list-style: none;
+			padding: 8px 12px;
+			cursor: default;
+			border-radius: 3px;
+			&:hover {
+				background-color: aqua;
+			}
+			&.selected {
+				background-color: aqua;
+			}
+		}
+	}
+	.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 24px;
+		padding: 15px;
+		text-align: center;
+		line-height: 55px;
+		color: #644bff;
+		cursor: pointer;
+	}
+}
+
+.fas-search-icon {
+	@extend %fa-icon;
+	@extend .fas;
+
+	&:before {
+		content: fa-content($fa-var-search)
+	}
+}
+
+.fas-close-icon {
+	@extend %fa-icon;
+	@extend .fas;
+	color: black;
+	&:before {
+		content: fa-content($fa-var-times-circle)
+	}
+}
